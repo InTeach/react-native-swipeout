@@ -22,7 +22,7 @@ const SwipeoutBtn = React.createClass({
     color: PropTypes.string,
     component: PropTypes.node,
     onPress: PropTypes.func,
-    text: PropTypes.string,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     type: PropTypes.string,
     underlayColor: PropTypes.string,
   },
