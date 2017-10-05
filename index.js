@@ -3,10 +3,9 @@ import NativeButton from './NativeButton';
 import styles from './styles';
 
 import React, {
-  Component,
-  PropTypes,
+  Component
 } from 'react';
-
+import PropTypes from 'prop-types';
 import {
   PanResponder,
   TouchableHighlight,
