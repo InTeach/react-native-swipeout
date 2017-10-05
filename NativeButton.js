@@ -35,7 +35,7 @@ class NativeButton extends  Component {
       disabledStyle: null,
       underlayColor: null,
     };
-  },
+  }
 
   _renderText() {
     // If children is not a string don't wrapp it in a Text component
@@ -48,7 +48,7 @@ class NativeButton extends  Component {
         { this.props.children }
       </Text>
     );
-  },
+  }
 
   render() {
     const disabledStyle = this.props.disabled ? (this.props.disabledStyle || styles.opacity) : {};
