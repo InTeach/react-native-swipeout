@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {
   TouchableWithoutFeedback,
@@ -25,23 +25,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const NativeButton = React.createClass({
-
-  propTypes: {
-    // Extract parent props
-    ...TouchableWithoutFeedback.propTypes,
-    textStyle: Text.propTypes.style,
-    disabledStyle: Text.propTypes.style,
-    children: PropTypes.node.isRequired,
-    underlayColor: PropTypes.string,
-    background: (TouchableNativeFeedback.propTypes) ? TouchableNativeFeedback.propTypes.background : PropTypes.any,
-  },
+class NativeButton extends  Component {
 
   statics: {
     isAndroid: (Platform.OS === 'android'),
   },
 
-  getDefaultProps: function() {
+  getDefaultProps() {
     return {
       textStyle: null,
       disabledStyle: null,
@@ -49,7 +39,7 @@ const NativeButton = React.createClass({
     };
   },
 
-  _renderText: function() {
+  _renderText() {
     // If children is not a string don't wrapp it in a Text component
     if (typeof this.props.children !== 'string') {
       return this.props.children;
@@ -62,7 +52,7 @@ const NativeButton = React.createClass({
     );
   },
 
-  render: function() {
+  render() {
     const disabledStyle = this.props.disabled ? (this.props.disabledStyle || styles.opacity) : {};
 
     // Extract Button props
@@ -109,6 +99,6 @@ const NativeButton = React.createClass({
       </TouchableHighlight>
     );
   }
-});
+}
 
 export default NativeButton;
