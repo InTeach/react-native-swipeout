@@ -27,9 +27,7 @@ const styles = StyleSheet.create({
 
 class NativeButton extends  Component {
 
-  statics: {
-    isAndroid: (Platform.OS === 'android'),
-  },
+
 
   getDefaultProps() {
     return {
@@ -74,7 +72,7 @@ class NativeButton extends  Component {
     };
 
     // Render Native Android Button
-    if (NativeButton.isAndroid) {
+    if (Platform.OS === 'android') {
       buttonProps = Object.assign(buttonProps, {
         background: this.props.background || TouchableNativeFeedback.SelectableBackground(),
       });
